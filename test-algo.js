@@ -1,4 +1,4 @@
-// test-algo.shynessLevels
+// test-algo.lines
 
 fs = require("fs");
 
@@ -20,31 +20,31 @@ fs.readFile(file, function(err, data) {
     i++;
   }
   nbCases = parseInt(nbCases);
-  for (var shynessLevel = 0; shynessLevel < nbCases; shynessLevel++) {
+  for (var line = 0; line < nbCases; line++) {
     var eachCase = "";
     i++;
     while (input[i] != '\n' && input[i]) {
       eachCase += input[i];
       i++;
     }
-    var people = 0;
+    var shyness = 0;
     var totalPeople = 0;
     var lastPeople = 0;
     if (!eachCase[1]) {
-      console.log("Case #" + shynessLevel + ": 0");
+      console.log("Case #" + line + ": 0");
       continue;
     }
-    while (eachCase[people]) {
-      totalPeople += parseInt(eachCase[people]);
-      lastPeople = parseInt(eachCase[people]);
-      people++;
+    while (eachCase[shyness]) {
+      totalPeople += parseInt(eachCase[shyness]);
+      lastPeople = parseInt(eachCase[shyness]);
+      shyness++;
     }
     totalPeople -= lastPeople;
-    if (totalPeople > people) {
-      console.log("Case #" + shynessLevel + ": 0");
+    if (totalPeople > shyness) {
+      console.log("Case #" + line + ": 0");
     }
     else {
-      console.log("Case #" + shynessLevel + ": " + (people - 1 - totalPeople));
+      console.log("Case #" + line + ": " + (shyness - 1 - totalPeople));
     }
   }
 })

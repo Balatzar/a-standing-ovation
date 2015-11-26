@@ -1,4 +1,4 @@
-// test-algo.lines
+// test-algo.js
 
 fs = require("fs");
 
@@ -6,8 +6,8 @@ if (process.argv.length < 3) {
   console.log("no input");
   return;
 }
-var file =  process.argv[2];
 
+var file =  process.argv[2];
 
 fs.readFile(file, function(err, data) {
   if (err)
@@ -30,6 +30,10 @@ fs.readFile(file, function(err, data) {
     var shyness = 0;
     var totalPeople = 0;
     var lastPeople = 0;
+    if (!eachCase[0]) {
+      console.log("Case missing");
+      continue;
+    }
     if (!eachCase[1]) {
       console.log("Case #" + line + ": 0");
       continue;

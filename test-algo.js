@@ -10,8 +10,10 @@ if (process.argv.length < 3) {
 var file =  process.argv[2];
 
 fs.readFile(file, function(err, data) {
-  if (err)
+  if (err) {
     console.log(err);
+    return;
+  }
   var input = data.toString('utf-8');
   var nbCases = "";
   var i = 0;
@@ -32,10 +34,6 @@ fs.readFile(file, function(err, data) {
     var lastPeople = 0;
     if (!eachCase[0]) {
       console.log("Case missing");
-      continue;
-    }
-    if (!eachCase[1]) {
-      console.log("Case #" + line + ": 0");
       continue;
     }
     while (eachCase[shyness]) {

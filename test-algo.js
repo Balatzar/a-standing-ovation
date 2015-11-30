@@ -37,12 +37,12 @@ fs.readFile(file, function(err, data) {
       continue;
     }
     while (eachCase[shyness]) {
+      totalPeople += parseInt(eachCase[shyness]);
       shyness++;
-      totalPeople += parseInt(eachCase[shyness - 1]);
       if ((shyness - totalPeople) > answer || !answer) {
         answer = (shyness - totalPeople)
       }
     }
-    console.log(answer)
+    console.log("Case #" + (line + 1) + ": " + answer);
   }
 })

@@ -18,10 +18,10 @@ for (var i = 0; i < generatedNbCase; i++) {
   for (var j = 0; j < NbIndex; j++) {
     line += Math.floor(Math.random() * 9);
   }
-  if (line[j - 1] == '0')
+  if (line[j - 1] == '0') {
     line += '1';
-  line += '\n';
-  input += line;
+  }
+  input += line + '\n';
 }
 
 // console.log(input)
@@ -50,7 +50,7 @@ function baltaAlgo() {
     while (eachCase[shyness]) {
       totalPeople += parseInt(eachCase[shyness]);
       shyness++;
-      if ((shyness - totalPeople) > answer || !answer) {
+      if ((shyness - totalPeople) > answer) {
         answer = (shyness - totalPeople)
       }
     }
@@ -99,6 +99,6 @@ function loicAlgo() {
 
 // console.log(loicAlgo());
 
-it('both algo return the same result', function() {
+it('should return the same result', function() {
   assert.equal(loicAlgo(), baltaAlgo());
 })
